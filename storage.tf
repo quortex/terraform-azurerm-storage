@@ -18,7 +18,7 @@
 resource "azurerm_storage_account" "quortex" {
   count = length(var.storage_containers) > 0 ? 1 : 0
 
-  name                     = substr(replace("${var.storage_account_name}", "-", ""), 0, 24)
+  name                     = substr(replace(var.storage_account_name, "-", ""), 0, 24)
   resource_group_name      = var.resource_group_name
   location                 = var.location
   account_tier             = var.storage_tier

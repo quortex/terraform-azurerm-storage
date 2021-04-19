@@ -22,7 +22,6 @@ module "storage" {
   source = "quortex/storage/azurerm"
 
   # Globally used variables.
-  subscription_id     = local.subscription_id
   location            = local.resource_group_location
   resource_group_name = local.resource_group_name
 
