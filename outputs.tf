@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+output "storage_account_id" {
+  value       = length(azurerm_storage_account.quortex) > 0 ? azurerm_storage_account.quortex[0].id : ""
+  description = "The storage account id."
+}
+
 output "storage_account_name" {
   value       = length(azurerm_storage_account.quortex) > 0 ? azurerm_storage_account.quortex[0].name : ""
   description = "The storage account name."
