@@ -24,6 +24,9 @@ resource "azurerm_storage_account" "quortex" {
   account_tier             = var.storage_tier
   account_replication_type = var.storage_replication_type
   account_kind             = var.storage_kind
+  blob_properties {
+    last_access_time_enabled = var.last_access_time_enabled
+  }
 
   tags = var.tags
 }
