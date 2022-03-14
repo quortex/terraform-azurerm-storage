@@ -62,6 +62,6 @@ variable "tags" {
 
 variable "last_access_time_enabled" {
   type        = bool
-  description = " Is the last access time based tracking enabled?"
+  description = "Is the last access time based tracking enabled?"
   default     = false
 }
