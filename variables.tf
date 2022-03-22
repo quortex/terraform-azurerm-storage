@@ -55,7 +55,13 @@ variable "storage_replication_type" {
 }
 
 variable "tags" {
-  type        = map
+  type        = map(any)
   description = "Tags to apply to resources. A list of key->value pairs."
   default     = {}
+}
+
+variable "last_access_time_enabled" {
+  type        = bool
+  description = "Is the last access time based tracking enabled?"
+  default     = false
 }
