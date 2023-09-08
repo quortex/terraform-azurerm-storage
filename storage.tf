@@ -18,12 +18,14 @@
 resource "azurerm_storage_account" "quortex" {
   count = length(var.storage_containers) > 0 ? 1 : 0
 
-  name                     = substr(replace(var.storage_account_name, "-", ""), 0, 24)
-  resource_group_name      = var.resource_group_name
-  location                 = var.location
-  account_tier             = var.storage_tier
-  account_replication_type = var.storage_replication_type
-  account_kind             = var.storage_kind
+  name                            = substr(replace(var.storage_account_name, "-", ""), 0, 24)
+  resource_group_name             = var.resource_group_name
+  location                        = var.location
+  account_tier                    = var.storage_tier
+  account_replication_type        = var.storage_replication_type
+  account_kind                    = var.storage_kind
+  allow_nested_items_to_be_public = var.allow_nested_items_to_be_public
+  min_tls_version                 = var.min_tls_version
   blob_properties {
     last_access_time_enabled = var.last_access_time_enabled
   }
