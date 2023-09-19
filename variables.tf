@@ -65,3 +65,15 @@ variable "last_access_time_enabled" {
   description = "Is the last access time based tracking enabled?"
   default     = false
 }
+
+variable "allow_nested_items_to_be_public" {
+  type        = bool
+  description = "(Optional) Allow or disallow nested items within this Account to opt into being public"
+  default     = true
+}
+
+variable "min_tls_version" {
+  type        = string
+  description = "(Optional) The minimum supported TLS version for the storage account. Possible values are TLS1_0, TLS1_1, and TLS1_2"
+  default     = "TLS1_2"
+}
