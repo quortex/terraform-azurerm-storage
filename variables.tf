@@ -77,3 +77,8 @@ variable "min_tls_version" {
   description = "(Optional) The minimum supported TLS version for the storage account. Possible values are TLS1_0, TLS1_1, and TLS1_2"
   default     = "TLS1_2"
 }
+variable "cross_tenant_replication_enabled" {
+  type        = bool
+  default     = true
+  description = "Should cross Tenant replication be enabled"
+}
